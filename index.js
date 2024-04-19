@@ -7,6 +7,8 @@ console.log('[PEXEL_API_KEY] --> ', PEXEL_API_KEY);
 
 const DOWNLOAD_PATH = 'pexels-download/';
 
+const PER_PAGE = 5;
+
 
 
 if (!fs.existsSync(DOWNLOAD_PATH)) {
@@ -79,7 +81,7 @@ const startSearchAndDownload = () => {
 
     searchPhoto({
         query: keyword,
-        per_page: 3,
+        per_page: PER_PAGE,
     }).then(res => {
         return res.json();
     }).then((response) => {
